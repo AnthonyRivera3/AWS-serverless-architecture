@@ -1,0 +1,127 @@
+.presentation-footer {
+  width: 100%;
+  min-height: 420px;
+  padding: 90px 8%;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(135deg, #020617, #111827, #1e1b4b);
+  color: white;
+}
+
+.footer-glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f97316, #ec4899, #2563eb);
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: floatBlob 8s ease-in-out infinite alternate;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.footer-label {
+  width: fit-content;
+  margin: 0 auto 18px;
+  padding: 9px 18px;
+  border-radius: 999px;
+
+  background: rgba(249, 115, 22, 0.16);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+
+  color: #fed7aa;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.presentation-footer h2 {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg, #ffffff, #fdba74, #93c5fd, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-message {
+  max-width: 760px;
+  margin: 0 auto 34px;
+
+  color: #e2e8f0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.footer-questions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 34px;
+  border-radius: 999px;
+
+  background: linear-gradient(135deg, #f97316, #ec4899, #2563eb);
+  box-shadow: 0 0 28px rgba(249, 115, 22, 0.45);
+
+  font-size: 1.25rem;
+  font-weight: 900;
+
+  animation: footerPulseGlow 2s infinite;
+}
+
+.light-mode .presentation-footer {
+  background: linear-gradient(135deg, #fff7ed, #eff6ff, #fdf2f8);
+  color: #0f172a;
+}
+
+.light-mode .presentation-footer h2 {
+  background: linear-gradient(90deg, #0f172a, #ea580c, #2563eb, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.light-mode .footer-message {
+  color: #334155;
+}
+
+.light-mode .footer-label {
+  color: #c2410c;
+  background: rgba(249, 115, 22, 0.14);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+@keyframes footerPulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 22px rgba(249, 115, 22, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 42px rgba(236, 72, 153, 0.8);
+  }
+}
+
+@keyframes floatBlob {
+  from {
+    transform: translateY(0px) scale(1);
+  }
+
+  to {
+    transform: translateY(-45px) scale(1.1);
+  }
+}
