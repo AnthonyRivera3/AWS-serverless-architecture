@@ -25,7 +25,11 @@ function App() {
   if (showQuestions) {
     return (
       <div className={darkMode ? "app dark-mode" : "app light-mode"}>
-        <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+        <Navbar
+          darkMode={darkMode}
+          toggleTheme={toggleTheme}
+          goHome={goHome}
+        />
 
         <QandA />
 
@@ -36,7 +40,11 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark-mode" : "app light-mode"}>
-      <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+      <Navbar
+        darkMode={darkMode}
+        toggleTheme={toggleTheme}
+        goHome={goHome}
+      />
 
       <header className="hero">
         <div className="hero-shape shape-1"></div>
@@ -190,73 +198,116 @@ function App() {
 
           <div className="benefits-list">
             <div>
-              <h3>Cost Efficient</h3>
+              <h3>Server Management</h3>
               <p>
-                Since resources run only when needed, serverless can reduce
-                costs for small and medium applications.
+                For starters, AWS manages all the hardware and software. This
+                helps developers because they do not have to spend as much time
+                managing servers. The maintenance and fixing of servers are
+                handled by Amazon, not the developer.
               </p>
             </div>
 
             <div>
-              <h3>Faster Development</h3>
+              <h3>Apps Scale Automatically</h3>
               <p>
-                Teams can focus more on building features instead of setting up
-                and maintaining servers.
+                Apps on AWS can scale from zero to thousands of requests without
+                manual intervention or planning. This helps because instead of a
+                developer turning servers on and off, the app responds when a
+                request is made.
+              </p>
+            </div>
+
+            <div>
+              <h3>Cost Efficient</h3>
+              <p>
+                AWS serverless architecture is beneficial cost wise because
+                there are no idling fees. Normally, if you are running an app on
+                a server, you pay for it to stay up all month. With serverless,
+                your app waits to be called, responds when needed, and then goes
+                back to waiting for the next request.
+              </p>
+            </div>
+
+            <div>
+              <h3>Overall Faster</h3>
+              <p>
+                For developers, deploying code can be faster than traditional
+                deployment. AWS can reduce the number of steps between finishing
+                code and running the application.
               </p>
             </div>
 
             <div>
               <h3>High Availability</h3>
               <p>
-                AWS services are designed to handle failures and keep apps
-                available.
+                AWS can help keep applications available by using cloud
+                infrastructure across multiple systems and regions. This helps
+                reduce downtime if one part of the system has an issue.
               </p>
             </div>
 
             <div>
-              <h3>Scalability</h3>
+              <h3>Improved Developer Productivity</h3>
               <p>
-                The app can handle sudden increases in users without manually
-                upgrading servers.
+                Because AWS handles much of the infrastructure, developers can
+                spend more time working on code and application logic instead of
+                server maintenance.
+              </p>
+            </div>
+
+            <div>
+              <h3>All-in-One Cloud Platform</h3>
+              <p>
+                AWS serverless architecture can provide compute, databases,
+                storage, API management, permissions, and monitoring in one
+                platform.
               </p>
             </div>
           </div>
         </section>
 
         <section id="topics" className="section">
-          <p className="section-label">Presentation Outline</p>
-          <h2>Presentation Topics</h2>
+          <p className="section-label">Cons</p>
+          <h2>Why Serverless Could Be Bad</h2>
 
           <div className="timeline">
             <div>
-              <h3>1. Introduction to Cloud Computing</h3>
-              <p>Explain what the cloud is and why companies use it.</p>
-            </div>
-
-            <div>
-              <h3>2. What Serverless Means</h3>
+              <h3>1. Cold Starts</h3>
               <p>
-                Explain that serverless still uses servers, but AWS manages
-                them.
+                Some serverless functions may take longer to respond when they
+                have not been used recently.
               </p>
             </div>
 
             <div>
-              <h3>3. Main AWS Services</h3>
+              <h3>2. Less Control</h3>
               <p>
-                Discuss Lambda, API Gateway, DynamoDB, S3, IAM, and CloudWatch.
+                Since AWS manages the servers, developers have less direct
+                control over the underlying infrastructure.
               </p>
             </div>
 
             <div>
-              <h3>4. Architecture Flow</h3>
-              <p>Show how the frontend connects to backend AWS services.</p>
+              <h3>3. Vendor Lock-In</h3>
+              <p>
+                Apps built heavily around AWS services may be harder to move to
+                another cloud provider later.
+              </p>
             </div>
 
             <div>
-              <h3>5. Benefits and Challenges</h3>
+              <h3>4. Debugging Can Be Harder</h3>
               <p>
-                Cover scalability, cost, security, monitoring, and complexity.
+                Serverless apps can involve many cloud services, which can make
+                testing and debugging more complex.
+              </p>
+            </div>
+
+            <div>
+              <h3>5. Costs Can Grow</h3>
+              <p>
+                Serverless can be cost efficient, but high traffic or inefficient
+                code can still lead to unexpected costs.
               </p>
             </div>
           </div>

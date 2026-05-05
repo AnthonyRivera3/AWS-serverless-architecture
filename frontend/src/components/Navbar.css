@@ -29,6 +29,8 @@
   color: #f8fafc;
   font-size: 1.15rem;
   font-weight: 800;
+
+  cursor: pointer;
 }
 
 .logo-icon {
@@ -41,20 +43,29 @@
   gap: 22px;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links button {
   color: #e2e8f0;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 700;
   transition: 0.2s ease;
   position: relative;
+
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links button:hover {
   color: #fdba74;
 }
 
-.nav-links a::after {
+.nav-links a::after,
+.nav-links button::after {
   content: "";
   position: absolute;
   left: 0;
@@ -68,7 +79,8 @@
   transition: 0.25s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links button:hover::after {
   width: 100%;
 }
 
