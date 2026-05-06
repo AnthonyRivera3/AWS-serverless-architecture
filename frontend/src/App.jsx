@@ -52,7 +52,7 @@ function App() {
         <div className="hero-shape shape-3"></div>
 
         <div className="hero-content">
-          <p className="eyebrow">Cloud Computing Presentation</p>
+          <p className="eyebrow">AWS Presentation</p>
 
           <h1>AWS Serverless Architecture</h1>
 
