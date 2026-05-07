@@ -6,45 +6,14 @@ import "./App.css";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
-  const [showQuestions, setShowQuestions] = useState(false);
 
   function toggleTheme() {
     setDarkMode(!darkMode);
   }
 
-  function goToQuestions() {
-    setShowQuestions(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function goHome() {
-    setShowQuestions(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  if (showQuestions) {
-    return (
-      <div className={darkMode ? "app dark-mode" : "app light-mode"}>
-        <Navbar
-          darkMode={darkMode}
-          toggleTheme={toggleTheme}
-          goHome={goHome}
-        />
-
-        <QandA />
-
-        <Footer goToQuestions={goToQuestions} />
-      </div>
-    );
-  }
-
   return (
     <div className={darkMode ? "app dark-mode" : "app light-mode"}>
-      <Navbar
-        darkMode={darkMode}
-        toggleTheme={toggleTheme}
-        goHome={goHome}
-      />
+      <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
 
       <header className="hero">
         <div className="hero-shape shape-1"></div>
@@ -229,15 +198,6 @@ function App() {
             </div>
 
             <div>
-              <h3>Overall Faster</h3>
-              <p>
-                For developers, deploying code can be faster than traditional
-                deployment. AWS can reduce the number of steps between finishing
-                code and running the application.
-              </p>
-            </div>
-
-            <div>
               <h3>High Availability</h3>
               <p>
                 AWS can help keep applications available by using cloud
@@ -326,7 +286,8 @@ function App() {
         </section>
       </main>
 
-      <Footer goToQuestions={goToQuestions} />
+      <Footer />
+      <QandA />
     </div>
   );
 }

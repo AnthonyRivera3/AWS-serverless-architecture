@@ -4,6 +4,8 @@
   padding: 150px 8% 100px;
   position: relative;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   display: flex;
   align-items: center;

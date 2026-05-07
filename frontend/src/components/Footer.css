@@ -1,9 +1,11 @@
 .presentation-footer {
   width: 100%;
-  min-height: 420px;
+  min-height: 100vh;
   padding: 90px 8%;
   position: relative;
   overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   display: flex;
   align-items: center;

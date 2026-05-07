@@ -64,6 +64,10 @@
   color: #fdba74;
 }
 
+.nav-links button.active {
+  color: #fdba74;
+}
+
 .nav-links a::after,
 .nav-links button::after {
   content: "";
@@ -81,6 +85,10 @@
 
 .nav-links a:hover::after,
 .nav-links button:hover::after {
+  width: 100%;
+}
+
+.nav-links button.active::after {
   width: 100%;
 }
 

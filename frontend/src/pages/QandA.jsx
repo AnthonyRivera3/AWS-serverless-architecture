@@ -2,7 +2,7 @@ import "./QandA.css";
 
 function QandA() {
   return (
-    <main className="qa-page">
+    <section id="qna" className="qa-page">
       <div className="ice-overlay"></div>
 
       <div className="brick-wall">
@@ -19,7 +19,7 @@ function QandA() {
         <h1>Questions?</h1>
         <p>We are ready to answer your questions.</p>
       </section>
-    </main>
+    </section>
   );
 }
 

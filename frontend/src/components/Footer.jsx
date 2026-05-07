@@ -1,6 +1,6 @@
 import "./Footer.css";
 
-function Footer({ goToQuestions }) {
+function Footer() {
   return (
     <footer className="presentation-footer">
       <div className="footer-glow"></div>
@@ -15,10 +15,6 @@ function Footer({ goToQuestions }) {
           Architecture. We hope this helped explain how serverless applications
           work and why they are useful in modern cloud computing.
         </p>
-
-        <button className="footer-questions" onClick={goToQuestions}>
-          Questions
-        </button>
       </div>
     </footer>
   );
