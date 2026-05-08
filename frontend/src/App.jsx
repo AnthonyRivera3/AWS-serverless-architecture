@@ -13,13 +13,23 @@ function App() {
 
   return (
     <div className={darkMode ? "app dark-mode" : "app light-mode"}>
+      <div className="viewport-deck-decor" aria-hidden="true">
+        <div className="viewport-deck-mesh" />
+        <div className="viewport-deck-blob viewport-deck-blob--a" />
+        <div className="viewport-deck-blob viewport-deck-blob--b" />
+        <span className="deck-spark deck-spark--1" />
+        <span className="deck-spark deck-spark--2" />
+        <span className="deck-spark deck-spark--3" />
+        <span className="deck-spark deck-spark--4" />
+        <div className="viewport-deck-float viewport-deck-float-1" />
+        <div className="viewport-deck-float viewport-deck-float-2" />
+        <div className="viewport-deck-float viewport-deck-float-3" />
+        <div className="viewport-deck-vignette" />
+      </div>
+
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
 
       <header className="hero">
-        <div className="hero-shape shape-1"></div>
-        <div className="hero-shape shape-2"></div>
-        <div className="hero-shape shape-3"></div>
-
         <div className="hero-content">
           <p className="eyebrow">AWS Presentation</p>
 
@@ -43,7 +53,7 @@ function App() {
       </header>
 
       <main>
-        <section id="overview" className="section">
+        <section id="overview" className="section deck-slide">
           <p className="section-label">Overview</p>
           <h2>What is Serverless Architecture?</h2>
 
@@ -52,6 +62,12 @@ function App() {
             without directly managing servers, operating systems, or
             infrastructure. AWS automatically handles scaling, availability, and
             server maintenance.
+          </p>
+
+          <p className="slide-callout">
+            Many well-known apps and services rely on cloud infrastructure so
+            they can handle growth and busy periods—ideas you will recognize from
+            everyday apps, even if you have not set up a server yet.
           </p>
 
           <div className="cards">
@@ -81,7 +97,7 @@ function App() {
           </div>
         </section>
 
-        <section id="architecture" className="section alternate">
+        <section id="architecture" className="section alternate deck-slide">
           <p className="section-label">Architecture</p>
           <h2>How the Architecture Works</h2>
 
@@ -90,14 +106,51 @@ function App() {
             layer, backend functions, and cloud storage or databases.
           </p>
 
-          <div className="flow">
-            <div>Frontend Website</div>
-            <span>→</span>
-            <div>Amazon API Gateway</div>
-            <span>→</span>
-            <div>AWS Lambda</div>
-            <span>→</span>
-            <div>Database / Storage</div>
+          <div
+            className="arch-diagram"
+            role="img"
+            aria-label="Request flow: browser to API Gateway, Lambda, then database or storage."
+          >
+            <div className="arch-diagram__pipeline">
+              <div className="arch-node arch-node--client arch-node--d1">
+                <span className="arch-node__layer">Client</span>
+                <span className="arch-node__title">Frontend</span>
+                <span className="arch-node__hint">SPA or static site</span>
+              </div>
+
+              <div className="arch-connector arch-connector--d1" aria-hidden>
+                <span className="arch-connector__track" />
+                <span className="arch-connector__pulse" />
+              </div>
+
+              <div className="arch-node arch-node--edge arch-node--d2">
+                <span className="arch-node__layer">Edge</span>
+                <span className="arch-node__title">API Gateway</span>
+                <span className="arch-node__hint">HTTPS · routes · auth</span>
+              </div>
+
+              <div className="arch-connector arch-connector--d2" aria-hidden>
+                <span className="arch-connector__track" />
+                <span className="arch-connector__pulse" />
+              </div>
+
+              <div className="arch-node arch-node--compute arch-node--d3">
+                <span className="arch-node__layer">Compute</span>
+                <span className="arch-node__title">Lambda</span>
+                <span className="arch-node__hint">Event-driven handlers</span>
+              </div>
+
+              <div className="arch-connector arch-connector--d3" aria-hidden>
+                <span className="arch-connector__track" />
+                <span className="arch-connector__pulse" />
+              </div>
+
+              <div className="arch-node arch-node--data arch-node--d4">
+                <span className="arch-node__layer">Data</span>
+                <span className="arch-node__title">DynamoDB / S3</span>
+                <span className="arch-node__hint">Records & assets</span>
+              </div>
+            </div>
           </div>
 
           <p className="section-note">
@@ -107,9 +160,15 @@ function App() {
           </p>
         </section>
 
-        <section id="services" className="section">
+        <section id="services" className="section deck-slide">
           <p className="section-label">AWS Services</p>
           <h2>Important AWS Services</h2>
+
+          <p className="slide-callout">
+            The same kinds of building blocks show up behind products people use
+            every day—think streaming, shopping, or ride apps—often mixed with
+            other tools, not serverless alone.
+          </p>
 
           <div className="cards">
             <div className="card">
@@ -161,7 +220,7 @@ function App() {
           </div>
         </section>
 
-        <section id="benefits" className="section alternate">
+        <section id="benefits" className="section alternate deck-slide">
           <p className="section-label">Benefits</p>
           <h2>Why Serverless is Beneficial</h2>
 
@@ -226,7 +285,7 @@ function App() {
           </div>
         </section>
 
-        <section id="topics" className="section">
+        <section id="topics" className="section deck-slide">
           <p className="section-label">Cons</p>
           <h2>Why Serverless Could Be Bad</h2>
 
@@ -273,8 +332,8 @@ function App() {
           </div>
         </section>
 
-        <section className="section conclusion">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <p className="section-label">Conclusion</p>
+        <section className="section conclusion deck-slide">
+          <p className="section-label">Conclusion</p>
           <h2>Why It Matters</h2>
 
           <p>
@@ -293,13 +352,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
