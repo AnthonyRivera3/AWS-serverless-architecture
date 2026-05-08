@@ -287,7 +287,7 @@ function App() {
 
         <section id="topics" className="section deck-slide">
           <p className="section-label">Cons</p>
-          <h2>Why Serverless Could Be Bad</h2>
+          <h2>Where Serverless Falls Short</h2>
 
           <div className="timeline">
             <div>
@@ -332,20 +332,37 @@ function App() {
           </div>
         </section>
 
-        <section className="section conclusion deck-slide">
-          <p className="section-label">Conclusion</p>
-          <h2>Why It Matters</h2>
+<section className="section conclusion deck-slide">
+  <p className="section-label">End Of Presentation!</p>
 
-          <p>
-            AWS Serverless Architecture is useful because it allows developers
-            to build scalable, secure, and cost-efficient applications without
-            managing traditional servers. It is especially powerful for modern
-            web apps, APIs, automation, and event-driven systems.
-          </p>
-        </section>
+  <h2 className="thank-you-title">Thank You!</h2>
+
+  <p className="conclusion-text">
+    Thank you for listening to our presentation on AWS Serverless
+    Architecture!
+  </p>
+
+  <div className="team-cards">
+    <div className="team-card">
+      <h3>Anthony Rivera</h3>
+      <p>Research • Initial Design • Development</p>
+    </div>
+
+    <div className="team-card">
+      <h3>Jake</h3>
+      <p>Research • UI Overhaul • Development</p>
+    </div>
+
+    <div className="team-card">
+      <h3>Tim Mills ☆</h3>
+      <p>Research • Organization / UI Changes • Development </p>
+    </div>
+
+  </div>
+</section>
       </main>
 
-      <Footer />
+    {/*<Footer /> */}
       <QandA />
     </div>
   );

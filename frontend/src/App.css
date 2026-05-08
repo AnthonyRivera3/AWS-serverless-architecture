@@ -1201,12 +1201,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.conclusion h2::after {
-  margin-left: auto;
-  margin-right: auto;
-  background: white;
-}
-
 .conclusion p {
   margin-left: auto;
   margin-right: auto;
@@ -1546,4 +1540,63 @@ body {
   .arch-node {
     padding: 10px 12px;
   }
+}
+
+.thank-you-title {
+  font-size: clamp(4rem, 9vw, 7rem);
+  text-align: center;
+  margin-bottom: 1rem;
+
+  background: linear-gradient(90deg, #ffb86b, #ff79c6, #8be9fd);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.thank-you-title::after {
+  display: none !important;
+}
+
+.conclusion-text {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 4rem auto;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.team-card {
+  min-width: 260px;
+  padding: 2rem;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.32);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255,120,200,0.2);
+}
+
+.team-card h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+}
+
+.team-card p {
+  opacity: 0.8;
+  line-height: 1.6;
 }
