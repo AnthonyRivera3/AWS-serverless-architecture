@@ -1,7 +1,7 @@
 .qa-page {
   width: 100%;
   min-height: 100vh;
-  padding: 150px 8% 100px;
+  padding: clamp(72px, 12vh, 130px) 8% clamp(52px, 8vh, 92px);
   position: relative;
   overflow: hidden;
   scroll-snap-align: start;
@@ -34,7 +34,7 @@
 
 .brick-wall {
   position: absolute;
-  top: 120px;
+  top: clamp(80px, 12vh, 120px);
   left: 50%;
   transform: translateX(-50%);
 
@@ -47,7 +47,7 @@
 }
 
 .brick {
-  height: 34px;
+  height: clamp(22px, 3.2vh, 34px);
   border-radius: 8px;
 
   background: linear-gradient(
@@ -82,8 +82,8 @@
 
 .game-ball {
   position: absolute;
-  width: 34px;
-  height: 34px;
+  width: clamp(24px, 3.5vh, 34px);
+  height: clamp(24px, 3.5vh, 34px);
   border-radius: 50%;
 
   background: radial-gradient(circle at 35% 30%, white, #38bdf8 45%, #2563eb);
@@ -98,9 +98,9 @@
 
 .game-paddle {
   position: absolute;
-  bottom: 90px;
-  width: 180px;
-  height: 22px;
+  bottom: clamp(52px, 9vh, 90px);
+  width: clamp(120px, 20vw, 180px);
+  height: clamp(14px, 2.8vh, 22px);
   border-radius: 999px;
 
   background: linear-gradient(135deg, #0f172a, #2563eb, #7c3aed);
@@ -115,7 +115,7 @@
   position: relative;
   z-index: 10;
 
-  padding: 50px;
+  padding: clamp(24px, 4.2vh, 50px);
   border-radius: 32px;
 
   background: rgba(255, 255, 255, 0.58);
@@ -131,7 +131,7 @@
 
 .qa-label {
   width: fit-content;
-  margin: 0 auto 16px;
+  margin: 0 auto 10px;
 
   padding: 9px 18px;
   border-radius: 999px;
@@ -146,9 +146,9 @@
 }
 
 .qa-content h1 {
-  font-size: clamp(4rem, 12vw, 9rem);
+  font-size: clamp(2.5rem, 9vw, 7rem);
   line-height: 0.95;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 
   background: linear-gradient(90deg, #0f172a, #2563eb, #7c3aed);
   -webkit-background-clip: text;
@@ -157,9 +157,16 @@
 }
 
 .qa-content p {
-  font-size: 1.3rem;
+  font-size: clamp(0.92rem, 1.5vw, 1.18rem);
   color: #334155;
   font-weight: 700;
+}
+
+@media (max-height: 760px) {
+  .qa-page {
+    padding-top: 56px;
+    padding-bottom: 44px;
+  }
 }
 
 .light-mode .qa-page {

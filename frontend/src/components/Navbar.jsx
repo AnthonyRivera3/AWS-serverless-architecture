@@ -14,6 +14,13 @@ function Navbar({ darkMode, toggleTheme }) {
     [],
   );
   const [activeSection, setActiveSection] = useState("overview");
+  const slideSelectors = useMemo(
+    () => [
+      ...navItems.map((item) => ({ id: item.id, selector: item.selector })),
+      { id: "", selector: ".presentation-footer" },
+    ],
+    [navItems],
+  );
 
   useEffect(() => {
     const scrollContainer = document.querySelector(".app");
@@ -24,8 +31,8 @@ function Navbar({ darkMode, toggleTheme }) {
       let closestSection = navItems[0].id;
       let closestDistance = Number.POSITIVE_INFINITY;
 
-      navItems.forEach((item) => {
-        const section = document.querySelector(item.selector);
+      slideSelectors.forEach((slide) => {
+        const section = document.querySelector(slide.selector);
         if (!section) return;
 
         const distance = Math.abs(
@@ -34,7 +41,7 @@ function Navbar({ darkMode, toggleTheme }) {
 
         if (distance < closestDistance) {
           closestDistance = distance;
-          closestSection = item.id;
+          closestSection = slide.id;
         }
       });
 
@@ -49,7 +56,7 @@ function Navbar({ darkMode, toggleTheme }) {
       scrollContainer.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateActiveSection);
     };
-  }, [navItems]);
+  }, [navItems, slideSelectors]);
 
   function handleNavClick(sectionId) {
     const section = document.querySelector(sectionId);
