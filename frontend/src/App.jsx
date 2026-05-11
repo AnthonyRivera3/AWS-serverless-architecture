@@ -229,88 +229,6 @@ function App() {
           </div>
         </section>
 
-        <section className="section alternate deck-slide">
-          <p className="section-label">Real world</p>
-          <h2>The viral post spike</h2>
-
-          <p>
-            Everyone gets this pattern: a video or post that is quiet one day
-            can explode overnight—feeds, comments, likes, and API calls all hit
-            at once.
-          </p>
-
-          <div
-            className="viral-story"
-            role="img"
-            aria-label="Diagram: one post triggers a burst of traffic; many parallel workers handle it, then activity calms."
-          >
-            <div className="viral-story__flow">
-              <div className="viral-post" aria-hidden>
-                <span className="viral-post__icon" />
-                <span className="viral-post__cap">One upload</span>
-              </div>
-
-              <div className="viral-burst" aria-hidden>
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-                  <span
-                    key={deg}
-                    className="viral-burst__ray"
-                    style={{ "--viral-rot": `${deg}deg` }}
-                  >
-                    <span className="viral-burst__dot" />
-                  </span>
-                ))}
-              </div>
-
-              <div className="viral-scale" aria-hidden>
-                <div className="viral-scale__label">Traffic hits every action</div>
-                <div className="viral-scale__grid">
-                  {Array.from({ length: 12 }, (_, i) => (
-                    <span key={i} className="viral-scale__cell" />
-                  ))}
-                </div>
-                <p className="viral-scale__hint">
-                  Comments · likes · feed refresh · metadata · notifications…
-                </p>
-              </div>
-            </div>
-
-            <p className="viral-story__outro">
-              When hype fades, parallel work tapers off and you are not paying to keep a huge idle stack “just in case” that video blows up.
-            </p>
-          </div>
-
-          <div className="viral-split">
-            <div className="viral-split__panel viral-split__panel--pain">
-              <h3 className="viral-split__head">Traditional backend</h3>
-              <ul className="viral-split__list">
-                <li>Fixed pools of servers can max out on surprise traffic</li>
-                <li>
-                  Teams must guess capacity—or buy spare boxes that sit quiet
-                  most days
-                </li>
-                <li>
-                  Under-provision → queues, timeouts, or a bad day for users
-                </li>
-              </ul>
-            </div>
-            <div className="viral-split__panel viral-split__panel--win">
-              <h3 className="viral-split__head">Why Lambda-style serverless fits</h3>
-              <ul className="viral-split__list">
-                <li>
-                  Each tiny job (API call, worker task) can run as its own
-                  execution—parallel by default
-                </li>
-                <li>
-                  AWS ramps concurrent executions under the hood (within
-                  service limits)
-                </li>
-                <li>Load drops → you are not holding a stadium open for three fans</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <section id="benefits" className="section alternate deck-slide">
           <p className="section-label">Benefits</p>
           <h2>Why Serverless is Beneficial</h2>
@@ -468,6 +386,88 @@ function App() {
             a brand-new machine for every single request forever. The takeaway is
             parallel scale-out vs. one fixed, overloaded box.
           </p>
+        </section>
+
+        <section className="section alternate deck-slide">
+          <p className="section-label">Real world</p>
+          <h2>The viral post spike</h2>
+
+          <p>
+            Everyone gets this pattern: a video or post that is quiet one day
+            can explode overnight—feeds, comments, likes, and API calls all hit
+            at once.
+          </p>
+
+          <div
+            className="viral-story"
+            role="img"
+            aria-label="Diagram: one post triggers a burst of traffic; many parallel workers handle it, then activity calms."
+          >
+            <div className="viral-story__flow">
+              <div className="viral-post" aria-hidden>
+                <span className="viral-post__icon" />
+                <span className="viral-post__cap">One upload</span>
+              </div>
+
+              <div className="viral-burst" aria-hidden>
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                  <span
+                    key={deg}
+                    className="viral-burst__ray"
+                    style={{ "--viral-rot": `${deg}deg` }}
+                  >
+                    <span className="viral-burst__dot" />
+                  </span>
+                ))}
+              </div>
+
+              <div className="viral-scale" aria-hidden>
+                <div className="viral-scale__label">Traffic hits every action</div>
+                <div className="viral-scale__grid">
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <span key={i} className="viral-scale__cell" />
+                  ))}
+                </div>
+                <p className="viral-scale__hint">
+                  Comments · likes · feed refresh · metadata · notifications…
+                </p>
+              </div>
+            </div>
+
+            <p className="viral-story__outro">
+              When hype fades, parallel work tapers off and you are not paying to keep a huge idle stack “just in case” that video blows up.
+            </p>
+          </div>
+
+          <div className="viral-split">
+            <div className="viral-split__panel viral-split__panel--pain">
+              <h3 className="viral-split__head">Traditional backend</h3>
+              <ul className="viral-split__list">
+                <li>Fixed pools of servers can max out on surprise traffic</li>
+                <li>
+                  Teams must guess capacity—or buy spare boxes that sit quiet
+                  most days
+                </li>
+                <li>
+                  Under-provision → queues, timeouts, or a bad day for users
+                </li>
+              </ul>
+            </div>
+            <div className="viral-split__panel viral-split__panel--win">
+              <h3 className="viral-split__head">Why Lambda-style serverless fits</h3>
+              <ul className="viral-split__list">
+                <li>
+                  Each tiny job (API call, worker task) can run as its own
+                  execution—parallel by default
+                </li>
+                <li>
+                  AWS ramps concurrent executions under the hood (within
+                  service limits)
+                </li>
+                <li>Load drops → you are not holding a stadium open for three fans</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section id="compare-idle" className="section deck-slide">
