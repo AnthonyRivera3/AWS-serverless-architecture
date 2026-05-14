@@ -1,3 +1,5 @@
+//CSC 490 Project
+
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import QandA from "./pages/QandA";
